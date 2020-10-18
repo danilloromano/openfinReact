@@ -1,0 +1,43 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "myApp",
+        "icon": "http://cdn.openfin.co/YourApp/favicon.ico",
+        "description": "myApp",
+        "url": "http://localhost:3000",
+        "uuid": "OpenfinPOC",
+        "backgroundColor": "#000000",
+        "autoShow": true,
+        "resizable": true,
+        "frame": true,
+        "defaultWidth": 400,
+        "defaultHeight": 400,
+        "defaultTop": 50,
+        "defaultLeft": 50,
+        "contextMenu": true,
+        "maximizable": true,
+        "cornerRounding": {
+            "width": 0,
+            "height": 0
+        },
+        "taskbarIconGroup": "myApp",
+        "loadErrorMessage": "There was an error loading the application."
+    },
+    "runtime": {
+        "arguments": "",
+        "version": "stable"
+    },
+    "shortcut": {
+        "company": "OpenFin",
+        "description": "OpenFin Define Draggable",
+        "name": "OpenFin Define Draggable"
+    },
+    "dialogSettings": {
+        "logo": "https://openfin.co/wp-content/uploads/2014/11/logo.png",
+        "bgColor": 4163183909,
+        "textColor": 4293980400,
+        "progressBarBgColor": 4278190080,
+        "progressBarFillColor": 4281513430,
+        "progressBarBorderColor": 4282137660
+    }
+}
