@@ -1,10 +1,12 @@
 import React from 'react'
-import HeaderMenu from '../molecoles/Header-Menu/header-menu'
+import PageWrapper from '../organisms/page-wrapper/page-wrapper'
 
 const Home = () =>  {
     return (
         <>
-            <HeaderMenu/>
+            <PageWrapper>
+                <p>Teste</p>
+            </PageWrapper>
         </>
     )
 }

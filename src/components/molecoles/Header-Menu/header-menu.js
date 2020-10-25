@@ -1,32 +1,44 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import clsx from 'clsx';
 
-const useStyles = makeStyles((theme) => ({
-    root: { flexGrow: 1 },
-    menuButton: { marginRight: theme.spacing(2) },
-    title: { flexGrow: 1 },
-}));
+import { connect } from 'react-redux';
+import { updateDrawerState } from '../../../redux/actions/actions'
+import headerStyles from './header-meu-style';
 
-const HeaderMenu = () => {
-    const classes = useStyles();
-
+const HeaderMenu = ({ title, drawerState, updateDrawerState }) => {
+    const classes = headerStyles();
+    console.log('drawerState', drawerState)
     return (
         <div className={classes.root}>
             <AppBar position="static">
-                <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon />
+                <Toolbar className={classes.tollbar}>
+                    <IconButton
+                        aria-label="open drawer"
+                        onClick={() => updateDrawerState(true)}
+                        edge="start"
+                        className={clsx(classes.menuButton, drawerState && classes.hide)}>
+                            <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" className={classes.title}>News</Typography>
+                    <Typography variant="h6" className={classes.title}>{title}</Typography>
                 </Toolbar>
             </AppBar>
         </div>
     );
 }
 
-export default HeaderMenu
+const mapStateToProps = (state) => {
+    return { drawerState: state.drawerState }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateDrawerState: (value) => dispatch(updateDrawerState(value)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderMenu)
