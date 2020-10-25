@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { updateDrawerState } from '../../../redux/actions/actions'
 import headerStyles from './header-meu-style';
 
-const HeaderMenu = ({ title, drawerState, updateDrawerState }) => {
+const HeaderMenu = ({ drawerState, updateDrawerState }) => {
     const classes = headerStyles();
     console.log('drawerState', drawerState)
     return (
@@ -24,7 +24,6 @@ const HeaderMenu = ({ title, drawerState, updateDrawerState }) => {
                         className={clsx(classes.menuButton, drawerState && classes.hide)}>
                             <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" className={classes.title}>{title}</Typography>
                 </Toolbar>
             </AppBar>
         </div>

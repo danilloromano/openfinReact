@@ -1,21 +1,25 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { grey, green } from '@material-ui/core/colors';
+import { indigo, yellow } from '@material-ui/core/colors';
 
 const MyTheme = createMuiTheme({
   palette: {
     primary: {
-      light: grey[500],
-      main: grey[700],
-      dark: grey[700],
-      contrastText: '#ffffff'
+      light: indigo[500],
+      main: indigo[700],
+      dark: indigo[900],
+      contrastText: '#FFFFFF',
     },
     secondary: {
-        light: green['A200'],
-        main: green['A400'],
-        dark: green['A700'],
-        contrastText: '#000000',
+        light: yellow['A200'],
+        main: yellow['A400'],
+        dark: yellow['A700'],
+        contrastText: '#FFFFFF',
       },
   },
+  background: {
+    main: '#FFFFFF',
+    contrastText: '#000000'
+  }
 });
 
 export default MyTheme

@@ -5,6 +5,7 @@ const constainerStyles = makeStyles((theme) => ({
         display: 'flex',
         width: '100%',
         padding: '2em',
+        backgroundColor: theme.background.main,
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,

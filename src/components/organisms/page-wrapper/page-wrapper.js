@@ -11,7 +11,7 @@ import Container from '../../atoms/container/container'
 const PageWrapper = (props) => {
     return (
         <ThemeProvider theme={MyTheme}>
-            <HeaderMenu title={'teste'} />
+            <HeaderMenu />
             <Wrapper>
                 <MyDrawer />
                 <Container >
