@@ -26,6 +26,10 @@ const MyDrawer = ({drawerState, updateDrawerState}) => {
             classes={{paper: classes.drawerPaper}}
             anchor="left"
             open={drawerState}
+            ModalProps={{
+                keepMounted: true // Better open performance on mobile.
+            }}
+            PaperProps={{  }}
         >
             <div className={classes.drawerHeader}>
                 <IconButton onClick={() => updateDrawerState(false)}>

@@ -10,8 +10,9 @@ const headerStyles = makeStyles((theme) => ({
         height: '30px',
         color: theme.palette.primary.contrastText,
     },
-    hide: { display: 'none' },
+    hide: { visibility: 'hidden' },
     menuButton: {
+        opacity: 1,
         height: '30px',
         width: '30px',
         color: "#ffffff"
