@@ -1,28 +1,28 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const drawerWidth = 200;
-
 const drawerStyles = makeStyles((theme) => ({
   drawerClosed: {
     flexShrink: 0,
-    height: '100%',
-    transition: theme.transitions.create('translateX(-200px)', {
-      easing: theme.transitions.easing.sharp,
+    display:'none',
+    transition: theme.transitions.create('display', {
+      easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
 
   drawerOppened: {
-    transition: theme.transitions.create('translateX(0px)', {
-      easing: theme.transitions.easing.sharp,
+    display:'flex',
+    transition: theme.transitions.create('display', {
+      easing: theme.transitions.easing.easeIn,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    overflowX:'hidden'
   },
 
   drawerPaper: {
     flexShrink: 0,
     position: 'relative',
-    width: drawerWidth,
+    overflowX: 'hidden'
   },
 
   toolbar: theme.mixins.toolbar,

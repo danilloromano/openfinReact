@@ -6,18 +6,18 @@ const constainerStyles = makeStyles((theme) => ({
         width: '100%',
         padding: '2em',
         backgroundColor: theme.background.main,
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        marginLeft: '-200px'
+        // transition: theme.transitions.create('margin', {
+        //     easing: theme.transitions.easing.sharp,
+        //     duration: theme.transitions.duration.leavingScreen,
+        // }),
+        // marginLeft: '-200px'
     },
     contentShift: {
-        transition: theme.transitions.create('margin', {
-          easing: theme.transitions.easing.easeOut,
-          duration: theme.transitions.duration.enteringScreen,
-        }),
-        marginLeft: 0,
+        // transition: theme.transitions.create('margin', {
+        //   easing: theme.transitions.easing.easeOut,
+        //   duration: theme.transitions.duration.enteringScreen,
+        // }),
+        // marginLeft: 0,
       },
 }))
 
