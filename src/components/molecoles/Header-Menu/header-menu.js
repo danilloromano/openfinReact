@@ -30,7 +30,7 @@ const HeaderMenu = ({ drawerState, updateDrawerState }) => {
 }
 
 const mapStateToProps = (state) => {
-    return { drawerState: state.drawerState }
+    return { drawerState: state.getIn(['drawerState']) }
 }
 
 const mapDispatchToProps = (dispatch) => {

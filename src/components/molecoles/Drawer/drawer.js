@@ -17,26 +17,26 @@ const MyDrawer = ({ drawerState, updateDrawerState }) => {
 
     const classes = drawerStyles()
     const defaultDrawerWidth = '200px'
-    const [drawerWidth, setDrawerWidth] = useState(defaultDrawerWidth);
-    const minDrawerWidth = 50;
-    const maxDrawerWidth = 300;
+    const [drawerWidth, setDrawerWidth] = useState(defaultDrawerWidth)
+    const minDrawerWidth = 60
+    const maxDrawerWidth = 300
 
-    const handleMouseDown = e => {
-        document.addEventListener("mouseup", handleMouseUp, true);
-        document.addEventListener("mousemove", handleMouseMove, true);
-    };
+    const handleMouseMove = useCallback(event => {
+        const newWidth = event.clientX - document.body.offsetLeft
+        if (newWidth > minDrawerWidth && newWidth < maxDrawerWidth) {
+            setDrawerWidth(newWidth)
+        }
+    }, [])
+
+    const handleMouseDown = (event) => {
+        document.addEventListener("mouseup", handleMouseUp, true)
+        document.addEventListener("mousemove", handleMouseMove, true)
+    }
 
     const handleMouseUp = () => {
-        document.removeEventListener("mouseup", handleMouseUp, true);
-        document.removeEventListener("mousemove", handleMouseMove, true);
-    };
-
-    const handleMouseMove = useCallback(e => {
-        const newWidth = e.clientX - document.body.offsetLeft;
-        if (newWidth > minDrawerWidth && newWidth < maxDrawerWidth) {
-            setDrawerWidth(newWidth);
-        }
-    }, []);
+        document.removeEventListener("mouseup", handleMouseUp, true)
+        document.removeEventListener("mousemove", handleMouseMove, true)
+    }
 
     return (
         <Drawer
@@ -49,7 +49,7 @@ const MyDrawer = ({ drawerState, updateDrawerState }) => {
         >
             <div
                 id="dragger"
-                onMouseDown={e => handleMouseDown(e)}
+                onMouseDown={event => handleMouseDown(event)}
                 className={classes.dragger}
             />
             <div className={classes.drawerHeader}>
@@ -74,7 +74,7 @@ const MyDrawer = ({ drawerState, updateDrawerState }) => {
 }
 
 const mapStateToProps = (state) => {
-    return { drawerState: state.drawerState }
+    return { drawerState: state.getIn(['drawerState']) }
 }
 
 const mapDispatchToProps = (dispatch) => {

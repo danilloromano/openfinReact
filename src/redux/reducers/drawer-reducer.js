@@ -1,11 +1,13 @@
 import { DRAWER_STATE } from '../constants/constats'
+import { fromJS } from 'immutable';
 
-const INITIAL_STATE = { drawerState: false }
+const INITIAL_STATE = fromJS({ drawerState: false })
 
 const drawerReducer = ( state = INITIAL_STATE, action ) => {
-    switch (action.type) {
+    const { type, drawerState } = action
+    switch (type) {
         case DRAWER_STATE:
-            return  { ...state, drawerState: action.drawerState };
+            return state.setIn(['drawerState'], fromJS(drawerState));
         default:
             return state
     }
