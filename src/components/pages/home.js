@@ -1,13 +1,11 @@
 import React from 'react'
 import PageWrapper from '../organisms/page-wrapper/page-wrapper'
 
-const Home = () =>  {
+const Home = () => {
     return (
-        <>
-            <PageWrapper>
-                <p>Teste</p>
-            </PageWrapper>
-        </>
+        <PageWrapper>
+            <h1>Welcome to the drunk with class</h1>
+        </PageWrapper>
     )
 }
 
