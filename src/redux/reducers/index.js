@@ -1,15 +1,15 @@
-import { DRAWER_STATE, GET_NEWS, NEWS_RECEIVED } from '../constants/constats'
+import { DRAWER_STATE, GET_VODKA_DRINKS, VODKA_DRINKS_RECEIVED } from '../constants/constats'
 
-const INITIAL_STATE = { drawerState: false, loading: false, news: {} }
+const INITIAL_STATE = { drawerState: false, loading: false, vodkaDrinks: {} }
 
 const reducers = ( state = INITIAL_STATE, action ) => {
     switch (action.type) {
         case DRAWER_STATE:
             return  { ...state, drawerState: action.drawerState };
-        case GET_NEWS:
+        case GET_VODKA_DRINKS:
             return { ...state, loading: true };
-        case NEWS_RECEIVED:
-            return { ...state, news: action.json[0], loading: false };
+        case VODKA_DRINKS_RECEIVED:
+            return { ...state, vodkaDrinks: action.json, loading: false };
         default:
             return state
     }
