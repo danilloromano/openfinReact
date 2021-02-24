@@ -3,13 +3,21 @@ import { makeStyles } from '@material-ui/core/styles';
 const style = makeStyles((theme) => ({
     drink_container: {
       display: 'flex',
+      width: 235,
+      height: 235,
+      padding: 10,
+      margin: '0.5em',
       flexDirection: "column",
       alignItems: 'center',
       justifyContent: 'center',
-      width: 235,
-      height: 235,
       backgroundColor: 'transparent',
-      padding: '0.5em',
+      borderRadius: '5%',
+      cursor: 'pointer',
+      color: theme.palette.primary.dark,
+      "&:hover": {
+        color: theme.palette.secondary.dark,
+        backgroundColor: theme.palette.action.hover,
+      }
     },
     drink_id: {
       display: 'none',
@@ -17,12 +25,16 @@ const style = makeStyles((theme) => ({
     drink_image: {
       hight: 'auto',
       width: '80%',
-      border: '4px solid RebeccaPurple ',
+      border: '2px solid',
+      borderColor: theme.palette.secondary.dark,
       borderRadius: '5%'
     },
     drink_name: {
-      color: theme.palette.primary.dark,
-      fontSize: 12
+      fontSize: 14,
+      maxWidth: 200,
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis'
     }
   }));
 
