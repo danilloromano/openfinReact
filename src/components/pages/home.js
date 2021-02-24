@@ -3,19 +3,22 @@ import { useDispatch, useSelector } from 'react-redux'
 import PageWrapper from '../organisms/page-wrapper/page-wrapper'
 import { getVodkaDrinks } from '../../redux/actions/actions';
 import Loading from '../atoms/loading'
+import DrinksBox from '../atoms/Drink-Box'
+import style from './styles';
 
 const Home = () => {
     const dispatch = useDispatch();
-    const arrDrinks = useSelector(({ vodkaDrinks }) => vodkaDrinks)
-
-    useEffect(() => dispatch(getVodkaDrinks()), []);
-
-    console.log('arrDrinks ____________', arrDrinks)
+    const classes = style();    
+    const drinks = useSelector(({ vodkaDrinks }) => vodkaDrinks);
+    
+    useEffect(() => { dispatch(getVodkaDrinks()) }, [dispatch]);
 
     return (
         <PageWrapper>
             <Loading />
-            <h1>Welcome </h1>
+            <div className={classes.home_container}>
+                {drinks && <DrinksBox drinks={drinks} />}
+            </div>
         </PageWrapper>
     )
 }

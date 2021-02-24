@@ -1,8 +1,8 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
+import { GET_VODKA_URL } from '../../utils/url'
 
 function* fetchVodkaDrinks() {
-    const json = yield fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka')
-        .then(response => response.json());
+    const json = yield fetch(GET_VODKA_URL).then(response => response.json());
     yield put({ type: "VODKA_DRINKS_RECEIVED", json: json.drinks });
 }
 

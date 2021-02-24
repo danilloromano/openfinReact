@@ -1,6 +1,6 @@
 import { DRAWER_STATE, GET_VODKA_DRINKS, VODKA_DRINKS_RECEIVED } from '../constants/constats'
 
-const INITIAL_STATE = { drawerState: false, loading: false, vodkaDrinks: {} }
+const INITIAL_STATE = { drawerState: false, loading: false }
 
 const reducers = ( state = INITIAL_STATE, action ) => {
     switch (action.type) {
