@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
@@ -10,13 +10,11 @@ import styles from './styles';
 
 const Menu = () => {
     const classes = styles();
-
-    const [open, setOpen] = React.useState(false);
-    const anchorRef = React.useRef(null);
-
-    const handleToggle = () => {
-        setOpen((prevOpen) => !prevOpen);
-    };
+    const [open, setOpen] = useState(false);
+    const anchorRef = useRef(null);
+    const prevOpen = useRef(open);
+    
+    const handleToggle = () => setOpen((prevOpen) => !prevOpen);
 
     const handleClose = (event) => {
         if (anchorRef.current && anchorRef.current.contains(event.target)) {
@@ -25,16 +23,14 @@ const Menu = () => {
         setOpen(false);
     };
 
-    function handleListKeyDown(event) {
+    const handleListKeyDown = (event) => {
         if (event.key === 'Tab') {
             event.preventDefault();
             setOpen(false);
         }
     }
 
-    // return focus to the button when we transitioned from !open -> open
-    const prevOpen = React.useRef(open);
-    React.useEffect(() => {
+    useEffect(() => {
         if (prevOpen.current === true && open === false) {
             anchorRef.current.focus();
         }

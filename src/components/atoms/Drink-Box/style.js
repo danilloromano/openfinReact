@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 const style = makeStyles((theme) => ({
     drink_container: {
       display: 'flex',
-      width: 235,
-      height: 235,
-      padding: 10,
+      width: 'calc(20% - 1em)',
+      paddingTop: '1em',
+      paddingBottom: '1em',
       margin: '0.5em',
       flexDirection: "column",
       alignItems: 'center',
@@ -30,8 +30,9 @@ const style = makeStyles((theme) => ({
       borderRadius: '5%'
     },
     drink_name: {
-      fontSize: 14,
+      fontSize: '1vw',
       maxWidth: 200,
+      marginBottom: 0,
       whiteSpace: 'nowrap',
       overflow: 'hidden',
       textOverflow: 'ellipsis'

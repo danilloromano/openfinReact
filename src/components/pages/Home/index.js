@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import PageWrapper from '../organisms/page-wrapper/page-wrapper'
-import { getVodkaDrinks } from '../../redux/actions/actions';
-import Loading from '../atoms/loading'
-import DrinksBox from '../atoms/Drink-Box'
+import PageWrapper from '../../organisms/page-wrapper/page-wrapper'
+import { getVodkaDrinks } from '../../../redux/actions/actions';
+import Loading from '../../atoms/loading'
+import DrinksBox from '../../atoms/Drink-Box'
 import style from './styles';
 
 const Home = () => {

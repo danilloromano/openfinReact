@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const style = makeStyles((theme) => ({
-    home_container: {
+const style = makeStyles(() => ({
+    vodka_container: {
       paddingTop: 30,
       display: 'flex',
       width: '100%',
