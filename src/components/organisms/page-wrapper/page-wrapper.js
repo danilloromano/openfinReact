@@ -1,23 +1,20 @@
 import React from 'react'
-import { ThemeProvider } from '@material-ui/core/styles';
-import { Wrapper } from './page-wrapper-styles';
 
 import Menu from '../../molecoles/Menu/index'
 import Footer from '../../molecoles/Footer/footer'
-import MyTheme from '../../../theme/theme'
-import Container from '../../atoms/container/container'
+import styles from './page-wrapper-styles';
 
-const PageWrapper = (props) => {
+const PageWrapper = ({ children }) => {
+    const classes = styles();
+
     return (
-        <ThemeProvider theme={MyTheme}>
+        <main className={classes.main}>
             <Menu />
-            <Wrapper>
-                <Container >
-                    {props.children}
-                </Container>
-            </Wrapper>
+            <div className={classes.container}>
+                {children}
+            </div>
             <Footer />
-        </ThemeProvider>
+        </main>
     )
 }
 

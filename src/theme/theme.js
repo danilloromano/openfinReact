@@ -15,9 +15,6 @@ const MyTheme = createMuiTheme({
         dark: deepOrange[900],
         contrastText: '#FFFFFF',
     },
-    // action: {
-    //   hover: 'rgb(87,87,87)',
-    // }
   },
   background: {
     main: grey[700],
