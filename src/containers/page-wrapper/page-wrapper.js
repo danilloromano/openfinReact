@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Menu from '../../molecoles/Menu/index'
-import Footer from '../../molecoles/Footer/footer'
+import Menu from '~/components/Menu/index'
+import Footer from '~/components/Footer/footer'
 import styles from './page-wrapper-styles';
 
 const PageWrapper = ({ children }) => {

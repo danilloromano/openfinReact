@@ -13,7 +13,7 @@ const style = makeStyles((theme) => ({
       backgroundColor: 'transparent',
       borderRadius: '5%',
       cursor: 'pointer',
-      color: theme.palette.primary.dark,
+      color: theme.background.contrastText,
       "&:hover": {
         color: theme.palette.secondary.dark,
         backgroundColor: theme.palette.action.hover,

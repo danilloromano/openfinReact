@@ -8,7 +8,7 @@ const DrinksBox = ({drinks}) => {
     return (
         drinks.map(item => (
             <div className={classes.drink_container}>
-                <img src={item.strDrinkThumb} className={classes.drink_image}/>
+                <img src={item.strDrinkThumb} className={classes.drink_image} alt="z"/>
                 <p className={classes.drink_id}>{item.drink_id}</p>
                 <p className={classes.drink_name}>{item.strDrink}</p>
             </div> 

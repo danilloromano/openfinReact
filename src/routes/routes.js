@@ -1,6 +1,6 @@
 import React from 'react';
-import Home from '../components/pages/Home';
-import Vodka from '../components/pages/Vodka';
+import Home from '~/pages/Home';
+import Vodka from '~/pages/Vodka';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const MyRoutes = () => {
