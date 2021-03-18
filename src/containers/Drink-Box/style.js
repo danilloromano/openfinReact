@@ -3,10 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 const style = makeStyles((theme) => ({
     drink_container: {
       display: 'flex',
-      width: 'calc(20% - 1em)',
+      width: 200,
       paddingTop: '1em',
       paddingBottom: '1em',
-      margin: '0.5em',
+      margin: '16px',
       flexDirection: "column",
       alignItems: 'center',
       justifyContent: 'center',
@@ -30,7 +30,7 @@ const style = makeStyles((theme) => ({
       borderRadius: '5%'
     },
     drink_name: {
-      fontSize: '1vw',
+      fontSize: 14,
       maxWidth: 200,
       marginBottom: 0,
       whiteSpace: 'nowrap',

@@ -7,7 +7,6 @@ const styles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexDirection: 'column',
-    height: 'calc(100% - 30px)',
     backgroundColor: theme.background.main,
   }
 }));
