@@ -4,6 +4,7 @@ const style = makeStyles((theme) => ({
     drink_container: {
       display: 'flex',
       width: 200,
+      height: 220,
       paddingTop: '1em',
       paddingBottom: '1em',
       margin: '16px',
